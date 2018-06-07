@@ -73,7 +73,6 @@ class PhoneInfo extends Component {
       padding: '8px',
       margin: '8px'
     };
-
     const { editing } = this.state;
 
 // 수정 & 적용 조건에 따라 UI변경    

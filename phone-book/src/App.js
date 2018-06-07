@@ -3,7 +3,7 @@ import PhoneForm from './component/PhoneForm'
 import PhoneInfoList from './component/PhoneInfoList'
 
 class App extends Component {
-  id = 2
+  id = 2 // 기존 데이터가 있기때문에 2로 셋팅
   state = {  //defalt data
     information : [
       {
@@ -20,7 +20,7 @@ class App extends Component {
     ]
   }
   // 리스트 추가 이벤트
-  handleCreate = (data) => { 
+  handleCreate = (data) => { // data = PhoneForm의 handleSubmit() 에서 넘겨받은 값
    const {information} = this.state; // 현재 state
    this.setState({
     information: information.concat({id: this.id++,...data}) //array1.concat() : array1과 주어진 다른 항목 간의 연결을 포함하는 Array 개체를 반환합니다.
@@ -30,7 +30,8 @@ class App extends Component {
   handleRemove = (id) => { 
     const {information} = this.state;
     this.setState({
-      information : information.filter(info => info.id !== id)
+      information : information.filter(info => info.id !== id) // information = info -> info.id !== id 것만 리턴
+
     })
   }
   handleUpdate = (id, data) => {
@@ -47,7 +48,7 @@ class App extends Component {
     const { information } = this.state;
     return (
       <div>
-        <PhoneForm
+        <PhoneForm //input
           onCreate={this.handleCreate}
         />
         <PhoneInfoList 
