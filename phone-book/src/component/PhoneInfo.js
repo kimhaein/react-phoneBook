@@ -23,14 +23,14 @@ class PhoneInfo extends Component {
   handleRemove = () => {
     // 삭제 버튼이 클릭되면 onRemove 에 id 넣어서 호출
     const { info, onRemove } = this.props;
-    onRemove(info.id);
+    onRemove(info.id); //PhoneInfoList.js의 onRemove메소드 실행
   }
 
   // editing 값을 반전시키는 함수입니다
   // true -> false, false -> true
   handleToggleEdit = () => {
-    const { editing } = this.state; 
-    this.setState({ editing: !editing });
+    const { editing } = this.state; // 현재 editing 상태
+    this.setState({ editing: !editing }); // 현재와 반대로 setState
   }
 
   // input 에서 onChange 이벤트가 발생 될 때
@@ -60,7 +60,7 @@ class PhoneInfo extends Component {
 
     if (prevState.editing && !this.state.editing) {
       // editing 값이 true -> false 로 전환 될 때
-      onUpdate(info.id, {
+      onUpdate(info.id, { //PhoneInfoList.js의 onUpdate메소드 실행
         name: this.state.name,
         phone: this.state.phone
       });

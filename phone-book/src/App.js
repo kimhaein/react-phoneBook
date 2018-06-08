@@ -38,7 +38,7 @@ class App extends Component {
     const { information } = this.state;
     this.setState({
       information: information.map(
-        info => id === info.id
+        info => id === info.id // 수정 누른 item의 아이디랑 같으면
           ? { ...info, ...data } // 새 객체를 만들어서 기존의 값과 전달받은 data 을 덮어씀
           : info // 기존의 값을 그대로 유지
       )
