@@ -21,7 +21,7 @@ class App extends Component {
   }
   // 리스트 추가 이벤트
   handleCreate = (data) => { // data = PhoneForm의 handleSubmit() 에서 넘겨받은 값
-   const {information} = this.state; // 현재 state
+   const {information} = this.state; // 현재 information 배열을 가져온다
    this.setState({
     information: information.concat({id: this.id++,...data}) 
     //array1.concat() : array1과 주어진 다른 항목 간의 연결을 포함하는 Array 개체를 반환합니다.
